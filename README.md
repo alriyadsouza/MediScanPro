@@ -1,2 +1,2 @@
 # MediScanPro
-Mini Project
+Mini Project.
