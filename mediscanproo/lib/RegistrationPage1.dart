@@ -65,10 +65,10 @@ class _RegistrationPageState extends State<RegistrationPage1> {
             child: Column(
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
-                SvgPicture.asset(
-                  'assets/logo.svg', // Replace with the path to your SVG
-                  height: 100,
-                ),
+                // SvgPicture.asset(
+                //   'assets/logo.svg', // Replace with the path to your SVG
+                //   height: 100,
+                // ),
                 SizedBox(height: 20),
                 Text(
                   'Join us and make a difference!',
@@ -124,9 +124,10 @@ class _RegistrationPageState extends State<RegistrationPage1> {
                     ),
                   ),
                   onPressed: () {
-                    if (_formKey.currentState!.validate()) {
-                      registerUser();
-                    }
+                    Navigator.pushReplacement(
+                      context,
+                      MaterialPageRoute(builder: (context) => LoginPage1()),
+                    );
                   },
                   child: Text(
                     'Register',

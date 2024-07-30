@@ -47,10 +47,10 @@ class _LoginPageState extends State<LoginPage1> {
             child: Column(
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
-                SvgPicture.asset(
-                  'assets/logo.svg', // Replace with the path to your SVG
-                  height: 100,
-                ),
+                // SvgPicture.asset(
+                //   'assets/logo.svg', // Replace with the path to your SVG
+                //   height: 100,
+                // ),
                 SizedBox(height: 20),
                 Text(
                   'Welcome Back! Let\'s Scan and Save Lives',
@@ -106,9 +106,10 @@ class _LoginPageState extends State<LoginPage1> {
                     ),
                   ),
                   onPressed: () {
-                    if (_formKey.currentState?.validate() ?? false) {
-                      loginUser();
-                    }
+                    Navigator.pushReplacement(
+                      context,
+                      MaterialPageRoute(builder: (context) => PhotoPage()),
+                    );
                   },
                   child: Text(
                     'Login',

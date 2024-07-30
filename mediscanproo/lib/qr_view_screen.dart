@@ -1,8 +1,10 @@
 import 'dart:async';
 import 'dart:io';
 import 'package:flutter/material.dart';
+import 'package:mediscanproo/result_page.dart';
 import 'package:qr_code_scanner/qr_code_scanner.dart';
-import 'text_to_speech_screen.dart'; // Import the TextToSpeechScreen
+import 'package:mediscanproo/text_to_speech_screen.dart'; // Import the TextToSpeechScreen
+import 'package:mediscanproo/result_page.dart';
 
 class QRViewScreen extends StatefulWidget {
   @override
@@ -100,6 +102,44 @@ class _QRViewScreenState extends State<QRViewScreen> {
                           );
                         },
                         child: Text('Speak', style: TextStyle(fontSize: 16)),
+                      ),
+                      SizedBox(height: 10),
+                      ElevatedButton(
+                        style: ElevatedButton.styleFrom(
+                          backgroundColor: Colors.teal,
+                          padding: EdgeInsets.symmetric(horizontal: 24, vertical: 12),
+                          shape: RoundedRectangleBorder(
+                            borderRadius: BorderRadius.circular(30.0),
+                          ),
+                        ),
+                        onPressed: () {
+                          Navigator.push(
+                            context,
+                            MaterialPageRoute(
+                              builder: (context) => ResultPage(result!.code!),
+                            ),
+                          );
+                        },
+                        child: Text('Translate to Kannada'),
+                      ),
+                      SizedBox(height: 10),
+                      ElevatedButton(
+                        style: ElevatedButton.styleFrom(
+                          backgroundColor: Colors.teal,
+                          padding: EdgeInsets.symmetric(horizontal: 24, vertical: 12),
+                          shape: RoundedRectangleBorder(
+                            borderRadius: BorderRadius.circular(30.0),
+                          ),
+                        ),
+                        onPressed: () {
+                          Navigator.push(
+                            context,
+                            MaterialPageRoute(
+                              builder: (context) => ResultPage(result!.code!),
+                            ),
+                          );
+                        },
+                        child: Text('Translate to Hindi'),
                       ),
                     ] else ...[
                       Text(

@@ -47,10 +47,10 @@ class _LoginPageState extends State<LoginPage> {
             child: Column(
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
-                SvgPicture.asset(
-                  'assets/logo.svg', // Replace with the path to your SVG
-                  height: 100,
-                ),
+                // SvgPicture.asset(
+                //   'assets/logo.svg', // Replace with the path to your SVG
+                //   height: 100,
+                // ),
                 SizedBox(height: 20),
                 Text(
                   'Your Health, Our Priority',
