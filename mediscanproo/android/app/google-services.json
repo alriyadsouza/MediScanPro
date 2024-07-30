@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "859976351853",
+    "project_id": "mediscanproo",
+    "storage_bucket": "mediscanproo.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:859976351853:android:5f0e820a5970d6b1a1bf64",
+        "android_client_info": {
+          "package_name": "com.example.mediscanproo"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "859976351853-ubv3pv7p4p0aupn59bq9050mpcn7io9u.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyArtlBGeV_ROAjmJdmPqou5yxPSqgo_9CY"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "859976351853-ubv3pv7p4p0aupn59bq9050mpcn7io9u.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
