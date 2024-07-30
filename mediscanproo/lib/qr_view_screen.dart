@@ -1,6 +1,5 @@
 import 'dart:async';
 import 'dart:io';
-
 import 'package:flutter/material.dart';
 import 'package:qr_code_scanner/qr_code_scanner.dart';
 import 'text_to_speech_screen.dart'; // Import the TextToSpeechScreen
@@ -14,6 +13,7 @@ class _QRViewScreenState extends State<QRViewScreen> {
   final GlobalKey qrKey = GlobalKey(debugLabel: 'QR');
   Barcode? result;
   QRViewController? controller;
+  bool flashOn = false;
 
   @override
   void reassemble() {
@@ -38,28 +38,59 @@ class _QRViewScreenState extends State<QRViewScreen> {
             key: qrKey,
             onQRViewCreated: _onQRViewCreated,
             overlay: QrScannerOverlayShape(
-              borderColor: Colors.red,
+              borderColor: Colors.teal,
               borderRadius: 10,
               borderLength: 30,
               borderWidth: 10,
               cutOutSize: MediaQuery.of(context).size.width * 0.8,
             ),
           ),
-          Positioned.fill(
-            child: Center(
+          Positioned(
+            top: 16,
+            left: 16,
+            child: IconButton(
+              icon: Icon(flashOn ? Icons.flash_on : Icons.flash_off, color: Colors.white),
+              onPressed: () {
+                setState(() {
+                  flashOn = !flashOn;
+                });
+                controller?.toggleFlash();
+              },
+            ),
+          ),
+          Center(
+            child: Align(
+              alignment: Alignment.center,
               child: Container(
-                color: Colors.black54, // Semi-transparent background
+                margin: EdgeInsets.symmetric(horizontal: 32.0),
+                decoration: BoxDecoration(
+                  color: Colors.black54,
+                  borderRadius: BorderRadius.circular(12.0),
+                ),
                 padding: const EdgeInsets.all(16.0),
                 child: Column(
-                  mainAxisAlignment: MainAxisAlignment.center,
+                  mainAxisSize: MainAxisSize.min,
                   children: [
                     if (result != null) ...[
                       Text(
-                        'Scanned Data: ${result!.code}',
-                        style: TextStyle(fontSize: 20, color: Colors.white),
+                        'Scanned Data:',
+                        style: TextStyle(fontSize: 20, color: Colors.white, fontWeight: FontWeight.bold),
+                      ),
+                      SizedBox(height: 10),
+                      Text(
+                        '${result!.code}',
+                        style: TextStyle(fontSize: 18, color: Colors.white),
+                        textAlign: TextAlign.center,
                       ),
                       SizedBox(height: 20),
                       ElevatedButton(
+                        style: ElevatedButton.styleFrom(
+                          backgroundColor: Colors.teal,
+                          padding: EdgeInsets.symmetric(horizontal: 24, vertical: 12),
+                          shape: RoundedRectangleBorder(
+                            borderRadius: BorderRadius.circular(30.0),
+                          ),
+                        ),
                         onPressed: () {
                           Navigator.push(
                             context,
@@ -68,12 +99,16 @@ class _QRViewScreenState extends State<QRViewScreen> {
                             ),
                           );
                         },
-                        child: Text('Speak'),
+                        child: Text('Speak', style: TextStyle(fontSize: 16)),
                       ),
                     ] else ...[
                       Text(
                         'Scan a QR code',
                         style: TextStyle(fontSize: 20, color: Colors.white),
+                      ),
+                      SizedBox(height: 20),
+                      CircularProgressIndicator(
+                        valueColor: AlwaysStoppedAnimation<Color>(Colors.teal),
                       ),
                     ],
                   ],
