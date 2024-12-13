@@ -1,0 +1,47 @@
+{
+  "project_info": {
+    "project_number": "731556984317",
+    "project_id": "med-alert-e48ee",
+    "storage_bucket": "med-alert-e48ee.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:731556984317:android:423bb445b9fb274a859594",
+        "android_client_info": {
+          "package_name": "com.osama_heikal.MedAlert"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "731556984317-8v66v5tgfdt8no3fq1s4g07g07c0f9jc.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.osama_heikal.MedAlert",
+            "certificate_hash": "0f42179a50780775bcb301998fbba5f39b49db04"
+          }
+        },
+        {
+          "client_id": "731556984317-mahtsm6li67u69j2so98plbjepv0cc9h.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyA6tPbLVkrHU0PNbW_McKUwYYvZblzCx_0"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "731556984317-mahtsm6li67u69j2so98plbjepv0cc9h.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
